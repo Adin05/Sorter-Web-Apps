@@ -1,0 +1,17 @@
+﻿@model List<Sorter.WebApps.Models.NameViewModel>
+@{
+    ViewData["Title"] = "Sorter";
+    var listName = "";
+}
+
+<div>
+    @foreach (var item in Model)
+    {
+        <p>@item.Name</p>
+        listName += item.Name + ",";
+    }
+</div>
+
+<p>
+    <a asp-area="" asp-controller="Sorter" asp-action="Save" asp-route-nameViewModels="@listName">Save to text</a>
+</p>
